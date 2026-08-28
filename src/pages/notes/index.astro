@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { notes } from "../../lib/content";
+---
+
+<BaseLayout title="Field notes" description="Short notes by Miguel Salazar on product, proof, access, culture, and making systems believable.">
+  <header class="page-hero">
+    <div class="shell page-hero__grid">
+      <div><p class="eyebrow">Studio log / field notes</p><h1>Ideas left on the desk.</h1></div>
+      <div class="page-hero__copy"><p>Short transmissions about product decisions, evidence boundaries, access, and the details worth preserving.</p></div>
+    </div>
+  </header>
+  <section>
+    <div class="shell notes-grid">
+      {notes.map((note) => (
+        <a class="note-card" href={`/notes/${note.slug}/`}>
+          <span class="note-card__number"><span>{note.number}</span><span>{note.date}</span></span>
+          <div><h2>{note.title}</h2><p>{note.summary}</p><span class="text-link">Read note <span aria-hidden="true">→</span></span></div>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

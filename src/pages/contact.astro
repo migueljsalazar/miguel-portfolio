@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../lib/content";
+---
+
+<BaseLayout title="Contact" description={`Contact ${site.name} through Instagram or GitHub.`}>
+  <section class="contact-panel">
+    <div class="contact-panel__main">
+      <div>
+        <p class="eyebrow">Open a line / {site.location}</p>
+        <h1>{site.contactPrompt}</h1>
+      </div>
+      <div>
+        <p class="lede">{site.availability}</p>
+        <div class="contact-panel__links">
+          {site.links.map((link) => (
+            <a href={link.url} target="_blank" rel="noreferrer">
+              <span>{link.label} · {link.handle}</span><span aria-hidden="true">↗</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+    <aside class="contact-panel__aside" aria-label="Signal visualization">
+      <div class="contact-signal" aria-hidden="true"></div>
+      <div class="contact-signal__copy"><span>TX / READY</span><span>NO FORM · DIRECT LINE</span></div>
+    </aside>
+  </section>
+</BaseLayout>

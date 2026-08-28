@@ -1,0 +1,55 @@
+{
+  "name": "Miguel Salazar",
+  "shortName": "MS",
+  "handle": "@migueljsalazar",
+  "location": "Miami ⇄ Global",
+  "role": "Product operator · creative technologist · polymath",
+  "eyebrow": "Miami ⇄ Global / Product · Culture · Systems",
+  "headline": "Useful worlds for a life most alive.",
+  "intro": "I turn ambiguous, human problems into products people can feel, understand, and use—combining product direction, research, design, and working software.",
+  "bio": "My work moves between software, culture, health, and public-interest systems. I like overlooked problems, unusual references, and the moment a loose idea becomes something another person can actually touch. The thread is simple: make the stakes legible, keep the human texture, and prove what works.",
+  "availability": "Open to unusual collaborations and consequential problems.",
+  "contactPrompt": "Bring a hard problem, an early signal, or a world worth making real.",
+  "capabilities": [
+    "Product direction",
+    "Research systems",
+    "Experience design",
+    "Rapid prototyping",
+    "AI-assisted products",
+    "Narrative and brand worlds"
+  ],
+  "principles": [
+    {
+      "number": "01",
+      "title": "Make ambiguity tangible",
+      "body": "A useful prototype gives a vague problem edges, stakes, and a place to test the next decision."
+    },
+    {
+      "number": "02",
+      "title": "Proof over posture",
+      "body": "A local build, a launch, and an outcome are different states. Name the state and show the evidence."
+    },
+    {
+      "number": "03",
+      "title": "Human stakes first",
+      "body": "Privacy, fear, access, dignity, and delight are product requirements—not copy added at the end."
+    },
+    {
+      "number": "04",
+      "title": "Keep the strange parts",
+      "body": "The memorable answer is rarely the most generic one. Preserve the detail that gives the work a pulse."
+    }
+  ],
+  "links": [
+    {
+      "label": "Instagram",
+      "handle": "@migueljsalazar",
+      "url": "https://www.instagram.com/migueljsalazar/"
+    },
+    {
+      "label": "GitHub",
+      "handle": "migueljsalazar",
+      "url": "https://github.com/migueljsalazar"
+    }
+  ]
+}

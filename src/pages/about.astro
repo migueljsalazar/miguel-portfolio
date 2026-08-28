@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../lib/content";
+---
+
+<BaseLayout title="About" description={`${site.name} is a product operator and creative technologist working across product, culture, and human systems.`}>
+  <header class="page-hero">
+    <div class="shell page-hero__grid">
+      <div>
+        <p class="eyebrow">About / operating notes</p>
+        <h1>Human stakes. Working systems.</h1>
+      </div>
+      <div class="page-hero__copy">
+        <p>{site.bio}</p>
+        <p>{site.availability}</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell about-preview">
+      <div>
+        <p class="eyebrow">A practice in motion</p>
+        <h2 class="about-preview__statement">
+          Product direction, research, design, and code—held together by <em>curiosity.</em>
+        </h2>
+      </div>
+      <div class="about-preview__aside">
+        <p>
+          I work best at the beginning, when the problem is real but the form is not.
+          I research until the stakes become legible, make several concrete directions,
+          and use working software to discover which idea deserves to continue.
+        </p>
+        <ul class="capability-list">
+          {site.capabilities.map((capability) => <li>{capability}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="principles-heading">
+    <div class="shell">
+      <div class="section-heading">
+        <div><p class="eyebrow">Four operating principles</p><h2 id="principles-heading">How the work moves.</h2></div>
+        <div class="section-heading__copy"><p>Not a process diagram. A set of constraints that keep speed, ambition, and honesty in the same room.</p></div>
+      </div>
+      <div class="principle-grid">
+        {site.principles.map((principle) => (
+          <article class="principle-card">
+            <span class="principle-card__number">{principle.number}</span>
+            <h3>{principle.title}</h3>
+            <p>{principle.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

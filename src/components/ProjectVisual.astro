@@ -1,0 +1,46 @@
+---
+interface Props {
+  visual: "signal" | "orbit" | "score";
+  title: string;
+}
+
+const { visual, title } = Astro.props;
+---
+
+<div class={`project-visual project-visual--${visual}`} role="img" aria-label={`Abstract visualization for ${title}`}>
+  {visual === "signal" && (
+    <>
+      <div class="signal-ledger">
+        <span class="signal-ledger__label">REACHABILITY / LIVE INDEX</span>
+        <div class="signal-ledger__grades" aria-hidden="true">
+          <b>S</b><b>A</b><b>B</b><b>C</b><b>D</b>
+        </div>
+        <div class="signal-ledger__rows" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i>
+        </div>
+      </div>
+      <span class="signal-pulse" aria-hidden="true"></span>
+    </>
+  )}
+  {visual === "orbit" && (
+    <>
+      <span class="orbit orbit--one" aria-hidden="true"></span>
+      <span class="orbit orbit--two" aria-hidden="true"></span>
+      <span class="orbit orbit--three" aria-hidden="true"></span>
+      <span class="orbit-core" aria-hidden="true">ORA</span>
+      <span class="orbit-note" aria-hidden="true">CARE / WITHOUT PRETENSE</span>
+    </>
+  )}
+  {visual === "score" && (
+    <>
+      <div class="score-card" aria-hidden="true">
+        <span class="score-card__figure"></span>
+        <span class="score-card__value">86</span>
+        <span class="score-card__caption">KEEP THE SIGNAL</span>
+      </div>
+      <span class="score-swatch score-swatch--one" aria-hidden="true"></span>
+      <span class="score-swatch score-swatch--two" aria-hidden="true"></span>
+      <span class="score-swatch score-swatch--three" aria-hidden="true"></span>
+    </>
+  )}
+</div>

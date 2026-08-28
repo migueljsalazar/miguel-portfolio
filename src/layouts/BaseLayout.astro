@@ -1,0 +1,94 @@
+---
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import { site } from "../lib/content";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = site.name,
+  description = site.intro,
+  image = "/og-image.png",
+  noindex = false
+} = Astro.props;
+
+const fullTitle = title === site.name ? title : `${title} — ${site.name}`;
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astro.url;
+const socialImage = Astro.site ? new URL(image, Astro.site) : new URL(image, Astro.url);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#e8e5dd" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <title>{fullTitle}</title>
+    <script is:inline>
+      (() => {
+        try {
+          const saved = localStorage.getItem("miguel-theme");
+          if (saved === "night") document.documentElement.dataset.theme = "night";
+        } catch {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <SiteHeader />
+    <main id="main">
+      <slot />
+    </main>
+    <SiteFooter />
+    <script>
+      const root = document.documentElement;
+      const toggles = document.querySelectorAll<HTMLButtonElement>("[data-theme-toggle]");
+
+      function syncThemeControls() {
+        const night = root.dataset.theme === "night";
+        toggles.forEach((toggle) => {
+          toggle.setAttribute("aria-pressed", String(night));
+          toggle.setAttribute("aria-label", night ? "Switch to day theme" : "Switch to night theme");
+          const label = toggle.querySelector("[data-theme-label]");
+          if (label) label.textContent = night ? "Day shift" : "Night shift";
+        });
+      }
+
+      toggles.forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+          const next = root.dataset.theme === "night" ? "day" : "night";
+          if (next === "night") root.dataset.theme = "night";
+          else delete root.dataset.theme;
+          try {
+            localStorage.setItem("miguel-theme", next);
+          } catch {}
+          syncThemeControls();
+        });
+      });
+
+      syncThemeControls();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "reachability-is-a-design-material",
+    "date": "2026-08-28",
+    "number": "N—01",
+    "title": "Reachability is a design material",
+    "summary": "A benefit can be real on paper and unreachable in practice. Interfaces should expose the distance between eligibility and actual help.",
+    "body": [
+      "Directories usually answer a database question: does a program exist? A person in need is asking something harder: can I reach it, am I safe applying, how long will it take, and what happens next?",
+      "That gap changes the product. Rank by practical reachability. Put status-safety and time-to-help near the top. Link every consequential claim to a source. Make uncertainty visible instead of laundering it through a clean interface."
+    ],
+    "related": "/work/aidsight/"
+  },
+  {
+    "slug": "nostalgia-is-an-instrument",
+    "date": "2026-08-28",
+    "number": "N—02",
+    "title": "Nostalgia is an instrument, not a costume",
+    "summary": "Old interfaces and physical tools matter when their constraints change the work—not when they merely signal taste.",
+    "body": [
+      "A CRT, a sequencer, or a terminal typeface can become empty shorthand. The useful question is what the older tool makes possible: a slower decision, a tactile route, a limitation that forces a point of view.",
+      "This site borrows the logic of a studio rather than someone else's room. Every object has a narrative job, every visual route has a direct semantic equivalent, and the atmosphere never gets to hide the work."
+    ],
+    "related": "/colophon/"
+  },
+  {
+    "slug": "name-the-proof-state",
+    "date": "2026-08-28",
+    "number": "N—03",
+    "title": "Name the proof state",
+    "summary": "A prototype, deployment, launch, purchase, and outcome are five different claims. Good product storytelling says which one is true.",
+    "body": [
+      "Polish makes it easy to overstate what happened. A working interface can prove the interaction. A public URL can prove deployment. Neither proves adoption or impact.",
+      "Treat evidence like a design system: define the states, label them consistently, and leave the unknowns visible. Trust compounds when the portfolio tells the difference."
+    ],
+    "related": "/work/"
+  }
+]

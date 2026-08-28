@@ -1,0 +1,40 @@
+---
+import { site } from "../lib/content";
+
+const pathname = Astro.url.pathname;
+const navigation = [
+  { label: "Work", href: "/work/" },
+  { label: "About", href: "/about/" },
+  { label: "Notes", href: "/notes/" },
+  { label: "Contact", href: "/contact/" }
+];
+---
+
+<header class="site-header">
+  <div class="shell site-header__inner">
+    <a class="brand-mark" href="/" aria-label={`${site.name}, home`}>
+      <span class="brand-mark__monogram" aria-hidden="true">{site.shortName}</span>
+      <span class="brand-mark__name">{site.name}</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      {navigation.map((item) => (
+        <a
+          href={item.href}
+          aria-current={pathname.startsWith(item.href) ? "page" : undefined}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+    <button
+      class="theme-toggle"
+      type="button"
+      data-theme-toggle
+      aria-label="Switch to night theme"
+      aria-pressed="false"
+    >
+      <span class="theme-toggle__lamp" aria-hidden="true"></span>
+      <span data-theme-label>Night shift</span>
+    </button>
+  </div>
+</header>

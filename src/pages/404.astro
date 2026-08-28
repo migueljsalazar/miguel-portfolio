@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Not found" description="The requested route could not be found." noindex>
+  <section class="contact-panel">
+    <div class="contact-panel__main">
+      <div><p class="eyebrow">Error / 404</p><h1>This object isn't in the room.</h1></div>
+      <p><a class="button button--ink" href="/">Return to the studio <span aria-hidden="true">←</span></a></p>
+    </div>
+    <aside class="contact-panel__aside" aria-label="Offline signal visualization">
+      <div class="contact-signal" aria-hidden="true"></div>
+      <div class="contact-signal__copy"><span>RX / EMPTY</span><span>ROUTE NOT FOUND</span></div>
+    </aside>
+  </section>
+</BaseLayout>

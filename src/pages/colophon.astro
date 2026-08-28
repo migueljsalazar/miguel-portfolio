@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Colophon" description="Design, accessibility, source, and build notes for Miguel Salazar's portfolio.">
+  <header class="page-hero">
+    <div class="shell page-hero__grid">
+      <div><p class="eyebrow">Colophon / build provenance</p><h1>How this room was made.</h1></div>
+      <div class="page-hero__copy"><p>A fast static site with an expressive DOM-based spatial layer. No canvas, no autoplay audio, no analytics, and no third-party imagery.</p></div>
+    </div>
+  </header>
+
+  <section class="case-section">
+    <div class="shell case-section__grid">
+      <div class="case-section__label">01 / Direction</div>
+      <div class="case-section__body">
+        <p>The site borrows DORF's idea that a portfolio can feel like a place, then rebuilds that idea around an original working room informed by studio culture, public brand cues, and Miguel's own product practice.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="shell case-section__grid">
+      <div class="case-section__label">02 / References</div>
+      <div class="case-section__body">
+        <ul>
+          <li><a href="https://www.dorf.nyc/" target="_blank" rel="noreferrer">DORF</a> — site-as-place and a direct/immersive two-path model.</li>
+          <li><a href="https://musictech.com/features/studios/show-off-your-studio-deaton-chris-anthonys-la-based-creative-hub/" target="_blank" rel="noreferrer">MusicTech: Studio 7</a> — collaboration, routing, warm/cool light, and tools as creative constraints.</li>
+          <li><a href="https://www.apartamentomagazine.com/stories/deaton-chris-anthony/" target="_blank" rel="noreferrer">Apartamento</a> — lived-in materiality, personal lore, and world-building.</li>
+          <li><a href="https://www.studio75av.com/" target="_blank" rel="noreferrer">Studio 75 AV</a> — slow practice, intentional systems, and an operational studio architecture.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="shell case-section__grid">
+      <div class="case-section__label">03 / Build</div>
+      <div class="case-section__body">
+        <p>Astro, typed JSON content, custom CSS, and a small amount of progressive JavaScript. Static output is served by Cloudflare Workers Assets. System fonts avoid third-party requests.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="shell case-section__grid">
+      <div class="case-section__label">04 / Accessibility</div>
+      <div class="case-section__body">
+        <p>The studio is semantic DOM rather than canvas. Every object route is a real link, motion respects reduced-motion preferences, the theme control is optional, and the direct work path never waits for the scene.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

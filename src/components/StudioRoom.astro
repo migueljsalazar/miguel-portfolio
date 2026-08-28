@@ -1,0 +1,115 @@
+---
+import { projects } from "../lib/content";
+---
+
+<section class="studio-section" id="studio" aria-labelledby="studio-title">
+  <div class="shell">
+    <div class="studio-intro">
+      <div>
+        <p class="eyebrow">Spatial index / no WebGL required</p>
+        <h2 id="studio-title">Enter the working room.</h2>
+      </div>
+      <p>
+        The room is an interface, not a gate. Explore the objects or use the
+        direct routes below—both paths lead to the same work.
+      </p>
+      <button class="button button--ink" type="button" data-studio-toggle aria-pressed="false">
+        <span data-studio-label>Enter studio</span>
+        <span aria-hidden="true">↘</span>
+      </button>
+    </div>
+
+    <div class="studio-room" data-studio-room>
+      <div class="studio-room__bar">
+        <span>MS / WORKING ROOM</span>
+        <span class="studio-room__status"><i aria-hidden="true"></i> SYSTEMS ACTIVE</span>
+        <span>MIAMI / 2026</span>
+      </div>
+
+      <div class="studio-scene">
+        <div class="studio-wall" aria-hidden="true"></div>
+        <div class="brick-column" aria-hidden="true"></div>
+        <div class="studio-window" aria-hidden="true"><span></span></div>
+        <div class="acoustic-panels" aria-hidden="true"><span></span><span></span></div>
+        <div class="pendant" aria-hidden="true"><span></span></div>
+        <div class="studio-rack" aria-hidden="true">
+          <div class="rack-synth"></div>
+          <div class="rack-knobs"></div>
+          <div class="rack-screen">TRK 03 / 120.0</div>
+          <div class="rack-keyboard"></div>
+        </div>
+        <div class="studio-desk" aria-hidden="true">
+          <span class="desk-leg desk-leg--left"></span>
+          <span class="desk-leg desk-leg--right"></span>
+        </div>
+        <div class="studio-monitor" aria-hidden="true">
+          <div class="studio-monitor__screen">
+            <p>MIGUEL_OS / PORTFOLIO</p>
+            <strong>SELECTED WORK</strong>
+            <span>{String(projects.length).padStart(2, "0")} OBJECTS READY</span>
+            <i></i>
+          </div>
+          <span class="studio-monitor__drive"></span>
+        </div>
+        <div class="switchboard" aria-hidden="true">
+          <span class="switchboard__label">ROUTING / EVERYTHING CONNECTS</span>
+          <svg viewBox="0 0 300 220" preserveAspectRatio="none">
+            <path class="cable cable--yellow" d="M30 28 C 80 82, 40 170, 148 190" />
+            <path class="cable cable--red" d="M136 24 C 240 55, 70 128, 270 190" />
+            <path class="cable cable--blue" d="M265 40 C 190 100, 220 130, 76 201" />
+          </svg>
+        </div>
+        <div class="studio-notebook" aria-hidden="true">
+          <span>FIELD NOTES</span>
+          <i></i><i></i><i></i>
+        </div>
+        <div class="studio-phone" aria-hidden="true"><span></span></div>
+        <div class="studio-chair" aria-hidden="true"></div>
+
+        <a class="hotspot hotspot--monitor" href="/work/">
+          <i aria-hidden="true"></i><span>Selected work</span>
+        </a>
+        <a class="hotspot hotspot--notebook" href="/notes/">
+          <i aria-hidden="true"></i><span>Field notes</span>
+        </a>
+        <a class="hotspot hotspot--rack" href="/about/">
+          <i aria-hidden="true"></i><span>About the operator</span>
+        </a>
+        <a class="hotspot hotspot--phone" href="/contact/">
+          <i aria-hidden="true"></i><span>Open a line</span>
+        </a>
+      </div>
+
+      <nav class="studio-direct-links" aria-label="Direct studio routes">
+        <a href="/work/"><span>01</span> Work</a>
+        <a href="/about/"><span>02</span> About</a>
+        <a href="/notes/"><span>03</span> Notes</a>
+        <a href="/contact/"><span>04</span> Contact</a>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<script>
+  const room = document.querySelector<HTMLElement>("[data-studio-room]");
+  const toggles = document.querySelectorAll<HTMLElement>("[data-studio-toggle], [data-enter-studio]");
+
+  function setStudio(entered: boolean, scroll = false) {
+    if (!room) return;
+    room.dataset.entered = String(entered);
+    document.querySelectorAll<HTMLElement>("[data-studio-toggle]").forEach((toggle) => {
+      toggle.setAttribute("aria-pressed", String(entered));
+      const label = toggle.querySelector("[data-studio-label]");
+      if (label) label.textContent = entered ? "Leave studio" : "Enter studio";
+    });
+    if (scroll) room.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
+  toggles.forEach((toggle) => {
+    toggle.addEventListener("click", (event) => {
+      if (toggle.matches("a")) event.preventDefault();
+      const entered = room?.dataset.entered !== "true";
+      setStudio(entered, true);
+    });
+  });
+</script>

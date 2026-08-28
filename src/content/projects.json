@@ -1,0 +1,84 @@
+[
+  {
+    "slug": "aidsight",
+    "title": "AidSight",
+    "year": "2026",
+    "eyebrow": "Civic product · Public MVP",
+    "summary": "A privacy-first guide that helps people find real aid programs by reachability—not merely by whether help technically exists.",
+    "status": "Public MVP",
+    "problem": "Food, shelter, legal help, health care, capital, and residencies exist, yet the people they were built for often cannot find or safely evaluate them.",
+    "scope": "Product concept, verified research system, three design directions, interaction design, and a self-contained static implementation.",
+    "approach": [
+      "Grade programs by practical reachability, from show-up-and-get-help to chronically waitlisted.",
+      "Run a second research pass against every cited official source and expose claim checks in the interface.",
+      "Keep search and filtering on-device so sensitive queries never leave the page."
+    ],
+    "proof": [
+      { "value": "56", "label": "programs" },
+      { "value": "129", "label": "official sources" },
+      { "value": "138", "label": "claim checks" },
+      { "value": "3", "label": "tested directions" }
+    ],
+    "outcome": "A public, browsable MVP with an intake wizard, source-level evidence, explicit limitations, and three comparable design systems. No adoption or impact result is claimed yet.",
+    "limits": "The dataset is a July 2026 snapshot, is primarily US-focused, and must be confirmed against each official source before someone acts.",
+    "tags": ["Public interest", "Research", "Privacy", "Product design"],
+    "visual": "signal",
+    "links": [
+      { "label": "View source", "url": "https://github.com/migueljsalazar/aid-blindness" }
+    ]
+  },
+  {
+    "slug": "naked-health",
+    "title": "Naked Health",
+    "year": "2026",
+    "eyebrow": "Health experience · Demo prototype",
+    "summary": "A branded web-and-mobile health guidance concept built around practical, culturally aware harm reduction rather than judgment.",
+    "status": "Demo prototype",
+    "problem": "Health guidance often becomes clinical, generic, or moralizing precisely when a person needs candid, context-aware help.",
+    "scope": "Brand system, responsive web experience, native mobile flows, service architecture, and a streaming conversational-guide prototype.",
+    "approach": [
+      "Pair a calm editorial identity with direct, scenario-led guidance.",
+      "Design the web and native experiences as one product system with shared topics and language.",
+      "Frame the conversational guide around harm reduction and explicit limits rather than diagnosis."
+    ],
+    "proof": [
+      { "value": "2", "label": "product surfaces" },
+      { "value": "5", "label": "topic areas" },
+      { "value": "3", "label": "demo scenarios" }
+    ],
+    "outcome": "A demo-quality Next.js web app and Expo mobile app that make the product, brand, and cross-platform interaction model concrete. Clinical validation and production use are not claimed.",
+    "limits": "This is a concept prototype, not medical advice, a regulated clinical product, or evidence of real-world health outcomes.",
+    "tags": ["Health", "Web + native", "Brand system", "Conversational UX"],
+    "visual": "orbit",
+    "links": [
+      { "label": "View source", "url": "https://github.com/migueljsalazar/nkaed" }
+    ]
+  },
+  {
+    "slug": "fashion-ai",
+    "title": "FashionAI",
+    "year": "2024",
+    "eyebrow": "Style product · Concept archive",
+    "summary": "An early consumer-product prototype exploring playful outfit feedback, personal taste signals, inspiration, and a premium interaction model.",
+    "status": "Concept archive",
+    "problem": "Most digital style tools separate inspiration, feedback, and personal preference instead of learning from the full loop.",
+    "scope": "Product flows and a React prototype spanning onboarding, scoring, suggestions, chat, inspiration, and subscription states.",
+    "approach": [
+      "Use a quick score and a concise remark as an understandable first feedback layer.",
+      "Connect suggestions and inspiration to the preference signals gathered during onboarding.",
+      "Prototype the premium boundary as part of the product flow rather than a separate marketing screen."
+    ],
+    "proof": [
+      { "value": "5", "label": "core flows" },
+      { "value": "1", "label": "React prototype" },
+      { "value": "2", "label": "native targets" }
+    ],
+    "outcome": "A first-draft interaction model for evaluating the concept before native implementation. Model quality, customer demand, and commercial outcomes were not validated.",
+    "limits": "Scores and AI feedback are mocked; the repository documents a product concept, not a production recommendation system.",
+    "tags": ["Consumer", "Fashion", "Product flows", "Prototype"],
+    "visual": "score",
+    "links": [
+      { "label": "View source", "url": "https://github.com/migueljsalazar/styleai" }
+    ]
+  }
+]

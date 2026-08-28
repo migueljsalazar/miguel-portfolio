@@ -1,0 +1,16 @@
+{
+  "name": "Miguel Salazar — Portfolio",
+  "short_name": "Miguel Salazar",
+  "description": "Useful worlds at the intersection of product, culture, and systems.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#e8e5dd",
+  "theme_color": "#e8e5dd",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

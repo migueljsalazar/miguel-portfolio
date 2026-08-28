@@ -1,0 +1,27 @@
+{
+  "name": "miguel-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "validate": "node scripts/validate-content.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "verify": "npm run validate && npm run check && npm run test && npm run build",
+    "deploy": "npm run verify && wrangler deploy",
+    "cf:whoami": "wrangler whoami"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^7.2.9",
+    "typescript": "^6.0.3",
+    "wrangler": "^4.127.1"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

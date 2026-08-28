@@ -1,0 +1,101 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectVisual from "../../components/ProjectVisual.astro";
+import { projects, type Project } from "../../lib/content";
+
+export function getStaticPaths() {
+  return projects.map((project) => ({ params: { slug: project.slug }, props: { project } }));
+}
+
+interface Props { project: Project }
+const { project } = Astro.props;
+const index = projects.findIndex((candidate) => candidate.slug === project.slug);
+const previous = projects[(index - 1 + projects.length) % projects.length]!;
+const next = projects[(index + 1) % projects.length]!;
+---
+
+<BaseLayout title={project.title} description={project.summary}>
+  <header class="case-hero">
+    <div class="case-hero__copy">
+      <div>
+        <p class="eyebrow">{project.eyebrow}</p>
+        <h1>{project.title}</h1>
+        <p class="case-hero__summary">{project.summary}</p>
+      </div>
+      <div class="case-hero__meta">
+        <div><span>Year</span><strong>{project.year}</strong></div>
+        <div><span>Proof state</span><strong>{project.status}</strong></div>
+        <div><span>Object</span><strong>{String(index + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}</strong></div>
+        <div><span>Source</span><strong>Public repository</strong></div>
+      </div>
+    </div>
+    <div class="case-hero__visual">
+      <ProjectVisual visual={project.visual} title={project.title} />
+    </div>
+  </header>
+
+  <section class="case-section">
+    <div class="shell case-section__grid">
+      <div class="case-section__label">01 / The problem</div>
+      <div class="case-section__body"><p>{project.problem}</p></div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="shell case-section__grid">
+      <div class="case-section__label">02 / Scope</div>
+      <div class="case-section__body"><p>{project.scope}</p></div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="shell case-section__grid">
+      <div class="case-section__label">03 / Approach</div>
+      <div class="case-section__body">
+        <ul>{project.approach.map((item) => <li>{item}</li>)}</ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="shell case-section__grid">
+      <div class="case-section__label">04 / Evidence</div>
+      <div class="case-section__body">
+        <p>{project.outcome}</p>
+        <div class="proof-grid">
+          {project.proof.map((item) => (
+            <div class="proof-item"><strong>{item.value}</strong><span>{item.label}</span></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="shell case-section__grid">
+      <div class="case-section__label">05 / Limits</div>
+      <div class="case-section__body">
+        <div class="limits-callout">
+          <p class="eyebrow">What this does not prove</p>
+          <p>{project.limits}</p>
+        </div>
+        <div style="margin-top: 2rem;">
+          {project.links.map((link) => (
+            <a class="button button--ink" href={link.url} target="_blank" rel="noreferrer">
+              {link.label} <span aria-hidden="true">↗</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="case-navigation" aria-label="Adjacent case studies">
+    <a href={`/work/${previous.slug}/`}>
+      <span>← Previous object</span><strong>{previous.title}</strong>
+    </a>
+    <a href={`/work/${next.slug}/`}>
+      <span>Next object →</span><strong>{next.title}</strong>
+    </a>
+  </nav>
+</BaseLayout>

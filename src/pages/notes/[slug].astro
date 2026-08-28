@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { notes, type Note } from "../../lib/content";
+
+export function getStaticPaths() {
+  return notes.map((note) => ({ params: { slug: note.slug }, props: { note } }));
+}
+
+interface Props { note: Note }
+const { note } = Astro.props;
+---
+
+<BaseLayout title={note.title} description={note.summary}>
+  <article class="shell note-article">
+    <p class="eyebrow">{note.number} / {note.date}</p>
+    <h1>{note.title}</h1>
+    <div class="note-article__body">
+      {note.body.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+    <p style="margin-top: 4rem;"><a class="button" href={note.related}>Follow the related route <span aria-hidden="true">→</span></a></p>
+  </article>
+</BaseLayout>

@@ -1,0 +1,25 @@
+---
+import { site } from "../lib/content";
+---
+
+<footer class="site-footer">
+  <div class="shell site-footer__grid">
+    <div>
+      <p class="eyebrow">Transmission remains open</p>
+      <p class="site-footer__callout">{site.contactPrompt}</p>
+    </div>
+    <div class="site-footer__links" aria-label="Social links">
+      {site.links.map((link) => (
+        <a href={link.url} target="_blank" rel="noreferrer">
+          <span>{link.label}</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      ))}
+    </div>
+    <div class="site-footer__meta">
+      <span>© 2026 {site.name}</span>
+      <a href="/colophon/">Colophon</a>
+      <span>Built in Miami · Hosted at the edge</span>
+    </div>
+  </div>
+</footer>

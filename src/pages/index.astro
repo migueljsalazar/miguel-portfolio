@@ -1,0 +1,122 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import StudioRoom from "../components/StudioRoom.astro";
+import { notes, projects, site } from "../lib/content";
+---
+
+<BaseLayout>
+  <section class="home-hero">
+    <div class="shell home-hero__grid">
+      <div class="home-hero__main">
+        <div>
+          <p class="eyebrow">{site.eyebrow}</p>
+          <h1>
+            Useful worlds for a life <span class="accent">most alive.</span>
+          </h1>
+        </div>
+        <div class="home-hero__intro">
+          <p>{site.intro}</p>
+          <div class="home-hero__actions">
+            <a class="button button--ink" href="/work/">
+              View selected work <span aria-hidden="true">→</span>
+            </a>
+            <a class="button" href="#studio" data-enter-studio>
+              Enter the studio <span aria-hidden="true">↘</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="home-hero__console" aria-label="Portfolio status">
+        <div class="console-readout">
+          <div class="console-readout__top">
+            <span>MS—26</span>
+            <span>ONLINE</span>
+          </div>
+          <span>OPERATOR: MIGUEL SALAZAR</span>
+          <strong>AMBIGUITY → WORKING SYSTEM</strong>
+          <span>{String(projects.length).padStart(2, "0")} SELECTED OBJECTS READY</span><i aria-hidden="true"></i>
+        </div>
+        <div class="home-hero__coordinates">
+          <div><span>Base</span><span>{site.location}</span></div>
+          <div><span>Mode</span><span>Build · test · prove</span></div>
+          <div><span>Signal</span><span>Culture / product / systems</span></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-strip__track">
+      {[...site.capabilities, ...site.capabilities].map((capability) => <span>{capability}</span>)}
+    </div>
+  </div>
+
+  <section class="section" aria-labelledby="selected-work-heading">
+    <div class="shell">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Selected systems / honest proof states</p>
+          <h2 id="selected-work-heading">Things made tangible.</h2>
+        </div>
+        <div class="section-heading__copy">
+          <p>
+            Public prototypes across civic access, health, and consumer experience.
+            Each case study says what exists, what it proves, and what remains unknown.
+          </p>
+          <a class="text-link" href="/work/">View the full index <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="project-grid">
+        {projects.map((project, index) => <ProjectCard project={project} index={index} />)}
+      </div>
+    </div>
+  </section>
+
+  <StudioRoom />
+
+  <section class="section" aria-labelledby="about-preview-heading">
+    <div class="shell about-preview">
+      <div>
+        <p class="eyebrow">About the operator</p>
+        <h2 class="about-preview__statement" id="about-preview-heading">
+          Unearthing overlooked possibilities. Building with <em>proof.</em> Keeping the human texture.
+        </h2>
+      </div>
+      <div class="about-preview__aside">
+        <p>{site.bio}</p>
+        <ul class="capability-list">
+          {site.capabilities.map((capability) => <li>{capability}</li>)}
+        </ul>
+        <a class="button" href="/about/">Read the operating notes <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="notes-heading">
+    <div class="shell">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Field notes / 2026</p>
+          <h2 id="notes-heading">Ideas left on the desk.</h2>
+        </div>
+        <div class="section-heading__copy">
+          <p>Short notes on products, evidence, access, and the details that make a system believable.</p>
+        </div>
+      </div>
+      <div class="notes-grid">
+        {notes.map((note) => (
+          <a class="note-card" href={`/notes/${note.slug}/`}>
+            <span class="note-card__number"><span>{note.number}</span><span>{note.date.slice(0, 4)}</span></span>
+            <div>
+              <h2>{note.title}</h2>
+              <p>{note.summary}</p>
+              <span class="text-link">Read note <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
