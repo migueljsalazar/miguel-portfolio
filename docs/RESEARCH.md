@@ -118,4 +118,3 @@ Observed facts are recorded in the source table. The Working Room concept,
 palette, type pairing, object map, and product architecture are original
 recommendations. They remain provisional until Miguel supplies the actual
 portfolio content and personal visual references.
-

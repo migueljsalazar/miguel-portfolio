@@ -197,4 +197,3 @@ The project is complete only when the public siteâ€”not merely the local buildâ€
 has verified content, rights, accessibility, performance, responsive behavior,
 domain routing, metadata, links, and a recoverable deployment. The immersive
 layer must fail gracefully without weakening any of those outcomes.
-
