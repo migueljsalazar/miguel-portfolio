@@ -58,6 +58,13 @@ npm run deploy
 The production build is deployed as static assets under the Cloudflare Worker
 named `miguel-portfolio`.
 
+After deployment, verify the actual public origin rather than treating a
+successful upload as proof that the site works:
+
+```bash
+npm run verify:live -- https://your-production-origin.example
+```
+
 ## Public-repository boundary
 
 This repository contains public-source project facts, original analysis,

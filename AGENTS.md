@@ -79,3 +79,10 @@ npm run deploy
 
 Do not rename the Worker or change the canonical site URL without also updating
 `astro.config.mjs`, `README.md`, and the deployment verification record.
+
+After deployment, prove the public routes, canonical metadata, social image,
+sitemap, robots file, and custom 404 against the exact production origin:
+
+```bash
+npm run verify:live -- https://your-production-origin.example
+```

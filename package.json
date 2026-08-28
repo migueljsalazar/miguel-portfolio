@@ -11,6 +11,7 @@
     "validate": "node scripts/validate-content.mjs",
     "test": "node --test tests/*.test.mjs",
     "verify": "npm run validate && npm run check && npm run test && npm run build",
+    "verify:live": "node scripts/verify-live.mjs",
     "deploy": "npm run verify && wrangler deploy",
     "cf:whoami": "wrangler whoami"
   },

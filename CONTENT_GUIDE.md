@@ -19,7 +19,8 @@ Examples that map cleanly to the repository:
   `src/styles/global.css`, while preserving `DESIGN.md`
 - “Change the studio's monitor interaction” →
   `src/components/StudioRoom.astro` plus visual verification
-- “Ship these changes” → `npm run deploy`, followed by live URL verification
+- “Ship these changes” → `npm run deploy`, followed by
+  `npm run verify:live -- https://your-production-origin.example`
 
 ## Project fields
 
