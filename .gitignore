@@ -1,0 +1,10 @@
+.DS_Store
+.env*
+!.env.example
+.firecrawl/
+.playwright-cli/
+node_modules/
+.next/
+out/
+coverage/
+output/playwright/
