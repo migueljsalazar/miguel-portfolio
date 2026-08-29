@@ -1,7 +1,9 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
-const site = process.env.PUBLIC_SITE_URL ?? "https://miguel-portfolio.workers.dev";
+const site =
+  process.env.PUBLIC_SITE_URL ??
+  "https://miguel-portfolio.migueljsalazar.workers.dev";
 
 export default defineConfig({
   site,

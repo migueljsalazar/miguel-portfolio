@@ -6,8 +6,8 @@ spatial studio built entirely from semantic HTML and CSS.
 
 ## Status
 
-The complete site is implemented. The production Cloudflare URL will be added
-here after the first verified deployment.
+The complete site is implemented and publicly deployed at
+[miguel-portfolio.migueljsalazar.workers.dev](https://miguel-portfolio.migueljsalazar.workers.dev).
 
 - [Design contract](DESIGN.md)
 - [Natural-language content guide](CONTENT_GUIDE.md)
@@ -62,7 +62,7 @@ After deployment, verify the actual public origin rather than treating a
 successful upload as proof that the site works:
 
 ```bash
-npm run verify:live -- https://your-production-origin.example
+npm run verify:live -- https://miguel-portfolio.migueljsalazar.workers.dev
 ```
 
 ## Public-repository boundary

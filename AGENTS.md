@@ -84,5 +84,5 @@ After deployment, prove the public routes, canonical metadata, social image,
 sitemap, robots file, and custom 404 against the exact production origin:
 
 ```bash
-npm run verify:live -- https://your-production-origin.example
+npm run verify:live -- https://miguel-portfolio.migueljsalazar.workers.dev
 ```
