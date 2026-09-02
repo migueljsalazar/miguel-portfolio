@@ -7,7 +7,7 @@ spatial studio built entirely from semantic HTML and CSS.
 ## Status
 
 The complete site is implemented and publicly deployed at
-[miguel-portfolio.migueljsalazar.workers.dev](https://miguel-portfolio.migueljsalazar.workers.dev).
+[miguel-portfolio.miguel-3d3.workers.dev](https://miguel-portfolio.miguel-3d3.workers.dev).
 
 - [Design contract](DESIGN.md)
 - [Natural-language content guide](CONTENT_GUIDE.md)
@@ -62,7 +62,7 @@ After deployment, verify the actual public origin rather than treating a
 successful upload as proof that the site works:
 
 ```bash
-npm run verify:live -- https://miguel-portfolio.migueljsalazar.workers.dev
+npm run verify:live -- https://miguel-portfolio.miguel-3d3.workers.dev
 ```
 
 ## Public-repository boundary

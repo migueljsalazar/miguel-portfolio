@@ -3,7 +3,7 @@ import sitemap from "@astrojs/sitemap";
 
 const site =
   process.env.PUBLIC_SITE_URL ??
-  "https://miguel-portfolio.migueljsalazar.workers.dev";
+  "https://miguel-portfolio.miguel-3d3.workers.dev";
 
 export default defineConfig({
   site,

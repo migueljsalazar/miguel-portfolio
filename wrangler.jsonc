@@ -1,6 +1,7 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "miguel-portfolio",
+  "account_id": "3d3f1ef0adad392837aea4fd697e9cf8",
   "compatibility_date": "2026-08-28",
   "workers_dev": true,
   "assets": {

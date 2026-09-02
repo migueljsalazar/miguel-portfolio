@@ -20,7 +20,7 @@ Examples that map cleanly to the repository:
 - “Change the studio's monitor interaction” →
   `src/components/StudioRoom.astro` plus visual verification
 - “Ship these changes” → `npm run deploy`, followed by
-  `npm run verify:live -- https://miguel-portfolio.migueljsalazar.workers.dev`
+`npm run verify:live -- https://miguel-portfolio.miguel-3d3.workers.dev`
 
 ## Project fields
 
